@@ -193,7 +193,7 @@
 
                   <?php
                       $date=date("Y/m/d");
-                      $sql="select token_no,main,sd1,sd2,fare,status from ann_booking where loginid='$loginid' and date='$date'";
+                      $sql="select token_no,main,sd1,sd2,fare,status from ann_booking where loginid='$loginid' and date='$date' and status='CONFIRMED'";
                       $result=mysqli_query($con,$sql);
                       if(mysqli_num_rows($result)>0)
                       {
@@ -223,7 +223,7 @@
 
                   <?php
                       $date=date("Y/m/d");
-                      $sql="select token_no,main,sd1,sd2,fare,status from private_booking where loginid='$loginid' and date='$date'";
+                      $sql="select token_no,main,sd1,sd2,fare,status from private_booking where loginid='$loginid' and date='$date' and status='CONFIRMED'";
                       $result=mysqli_query($con,$sql);
                       if(mysqli_num_rows($result)>0)
                       {
