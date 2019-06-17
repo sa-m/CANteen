@@ -2,6 +2,7 @@
 	require_once("dbconnect.php");
 	session_start();
 	$loginid=$_SESSION['loginid'];
+	date_default_timezone_set("Asia/Calcutta");
 	$sql="select * from customers where loginid='$loginid'";
 	$result=mysqli_query($con,$sql);
 	if(!$result)
@@ -24,10 +25,10 @@
 	$result=mysqli_query($con,$sql);
 	$count=mysqli_num_rows($result);
 	$token=$count+1;
-	date_default_timezone_set("Asia/Calcutta");
+	
 	$time=date("h:i:sa");
 	$otime="09:00:00am";
-	$ctime="11:30:00pm";
+	$ctime="11:30:00am";
 	$t=strtotime($time);
 	$time1=strtotime($otime);
 	$time2=strtotime($ctime);
